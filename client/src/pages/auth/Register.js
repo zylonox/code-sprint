@@ -12,7 +12,7 @@ const Register = () => {
     //form function
     const handleSubmit=(e)=>{
         e.preventDefault()
-        console.log(name,email,password,address,phone);
+        console.log(name,email,password,phone);
         toast.success('register successfully');
 
     }   
