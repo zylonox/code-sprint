@@ -29,6 +29,9 @@ const Register = () => {
             toast.error("something went wrong")
             
         }
+        console.log(name,email,password,phone);
+        toast.success('register successfully');
+
     }   
 
   return (
