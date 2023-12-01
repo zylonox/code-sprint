@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
+import SearchInput from "../SearchInput";
 
 const Header = () => {
   return (
@@ -23,16 +24,13 @@ const Header = () => {
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto">
+              <SearchInput/>
               <li className="nav-item">
                 <NavLink to="/" className="nav-link">
                   Home <span className="sr-only">(current)</span>
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink to="/category" className="nav-link">
-                  Category <span className="sr-only">(current)</span>
-                </NavLink>
-              </li>
+              
               <li className="nav-item">
                 <NavLink to="/register" className="nav-link">
                   Register
@@ -44,46 +42,9 @@ const Header = () => {
                   Sign in
                 </NavLink>
               </li>
-              <li className="nav-item dropdown">
-                <NavLink
-                  to="/dropdown"
-                  className="nav-link dropdown-toggle"
-                  id="navbarDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Options
-                </NavLink>
-                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <NavLink to="/" className="dropdown-item">
-                    Action
-                  </NavLink>
-                  <NavLink to="/" className="dropdown-item">
-                    Another action
-                  </NavLink>
-                  <div className="dropdown-divider"></div>
-                  <NavLink to="/" className="dropdown-item">
-                    Something else here
-                  </NavLink>
-                </div>
-              </li>
+              
             </ul>
-            <form className="form-inline my-2 my-lg-0">
-              <input
-                className="form-control mr-sm-2"
-                type="search"
-                placeholder="cpu,price,ram or type"
-                aria-label="Search"
-              />
-              <button
-                className="btn btn-outline-success my-2 my-sm-0"
-                type="submit"
-              >
-                Search
-              </button>
-            </form>
+            
           </div>
         </nav>
       </>

@@ -21,8 +21,8 @@ async function searchContoller(req,res){
                 {storage:{$regex : keyword, $options:"i"}},
                 {price:{$regex : keyword, $options:"i"}},
             ]
-        }).select("-photo")
-        res.json(results)
+        }).select("-photo");
+        res.json(result);
         
     } catch (error) {
         console.log(error)
