@@ -35,7 +35,7 @@ const Login = () => {
      <Layout title="Register">
         <div className="register">
         <form onSubmit={handleSubmit}>
-            <h4>REGISTER FORM</h4>
+            <h4>Login Form</h4>
            
 
   <div className="mb-3">

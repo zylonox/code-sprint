@@ -8,11 +8,13 @@ const SearchInput = () => {
     const navigate=useNavigate()
     const handleSumbit = async(e)=>{
         e.preventDefault()
+        console.log("test")
         try {
-            const {data} = await axios.get(`/api/laptop/search/${values.keyword}`)
-            setValues({...values,result: data});
+            const {data} = await axios({method: "get", url :`http://localhost:8080/api/laptop/search/${values.keyword}`})
+            setValues({...values,results: data});
             navigate("/search");
         } catch (error) {
+          console.log(error)
             
         }
 

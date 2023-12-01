@@ -7,5 +7,6 @@ router.get("/getAllLaptops", getAllLaptops);
 router.get("/search/:keyword",searchContoller);
 
 
+
 module.exports = router;
 

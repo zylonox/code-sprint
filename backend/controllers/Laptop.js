@@ -9,10 +9,13 @@ async function getAllLaptops(req, res) {
     }
 }
 
+
 async function searchContoller(req,res){
     try {
+        
         const {keyword} = req.params
-        const result =await LaptopSchema.find({
+        
+        const result =await Laptop.find({
             $or : [
                 {productName:{$regex : keyword, $options:"i"}},
                 {description:{$regex : keyword, $options:"i"}},
@@ -20,9 +23,12 @@ async function searchContoller(req,res){
                 {ram:{$regex : keyword, $options:"i"}},
                 {storage:{$regex : keyword, $options:"i"}},
                 {price:{$regex : keyword, $options:"i"}},
+                {category:{$regex : keyword,$options:"i"}}
             ]
         }).select("-photo");
+        
         res.json(result);
+
         
     } catch (error) {
         console.log(error)
@@ -35,4 +41,7 @@ async function searchContoller(req,res){
     }
 }
 
-module.exports = { getAllLaptops,searchContoller};
+module.exports={getAllLaptops,searchContoller}
+
+
+
