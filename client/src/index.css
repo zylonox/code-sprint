@@ -40,6 +40,7 @@
   text-decoration: none;
   color: white;
   padding: 10px;
+  max-height: 10%;
 }
 .footer a:hover {
   color: wheat;
