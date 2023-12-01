@@ -1,19 +1,20 @@
-
-const dotenv=require("dotenv");
+require('dotenv').config();
 const connectDatabase=require("./config/database");
 const express=require("express");
 const morgan=require("morgan");
 const authRoutes=require("./routes/authRoute");
 const cors=require("cors");
-const displayRoute=require("./routes/displayRoute")
 
-
+const bodyParser = require("body-parser");
+const laptopRoutes = require("./routes/Laptop")
+const categoryRoutes = require("./routes/Category")
+//config
 //config
 
-dotenv.config({path:"backend/config/config.env"})
 
 //connect database
 const mongoose = require("mongoose");
+const { getCategory } = require('./controllers/Category');
 mongoose
 	.connect(process.env.DB_URL, {
 		
@@ -25,16 +26,18 @@ mongoose
 
 //rest object
 const app=express();
-
 //middleware
 app.use(cors())
 app.use(express.json());
-app.use(morgan("dev"));
+app.use(bodyParser.json());
 
 //routes
 app.use("/api/v1/auth",authRoutes);
-app.use("/api/v1",displayRoute);
+app.use("/api/laptop",laptopRoutes );
+app.use("/api/category",categoryRoutes);
+
+
 
 app.listen(process.env.PORT,()=>{
     console.log(`server is working on ${process.env.PORT}`)
-}); 
+});

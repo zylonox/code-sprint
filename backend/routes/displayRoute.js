@@ -1,5 +1,5 @@
 const express=require("express");
-const { getLaptopList } = require("../controllers/LaptopContoller");
+const { getLaptopList } = require("../controllers/Laptop");
 const laptopModel = require("../models/laptopModel");
 const router=express.Router();
 
